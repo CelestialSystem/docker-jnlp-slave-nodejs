@@ -7,7 +7,7 @@ LABEL Description="This is a base image, which allows connecting Jenkins agents 
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 USER root
-apt-get update && apt-get install curl libltdl-dev -y 
+RUN apt-get update && apt-get install curl libltdl-dev -y 
 RUN curl -sL https://deb.nodesource.com/setup_8.x |  bash -
 RUN apt-get update && apt-get install apt-utils apt-transport-https software-properties-common nodejs python3-pip -y
 RUN pip3 install awscli --upgrade --user
